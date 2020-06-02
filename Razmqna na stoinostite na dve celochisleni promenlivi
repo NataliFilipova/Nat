@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std; 
+
+//Функция, която разменя стойностите на две целочислени променливи.
+
+//предаване на параметър по псевдновим
+
+void swap(int& x, int& y)
+{
+    int temp = x;
+    x = y;
+    y = temp;
+}
+//предаване на параметър по указател
+void swap(int* x, int* y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+
+}
+
+void testSwap()
+{
+    int x = 5, y = 10;
+
+    cout << "Original values x = " << x << " y = " << y << endl;
+    
+    //обръщение към функцията с предаване на параметър по псевдоним
+    swap(x, y);
+    cout << "New values x = " << x << " y = " << y << endl;
+
+    //предаване на параметрите по указател
+    // подаваме адресите на променливите, чиито стойности искаме да разменим
+    swap(&x, &y);
+    cout << "Another swap ... x = " << x << " y = " << y << endl;
+}
+
+
+int main()
+{
+    testSwap();
+}
+
